@@ -1,0 +1,16 @@
+Typescript is a JS Superset
+    - It is JS with extensions
+    - Allows you to specify static variable types where JS are dynamically typed
+
+Why use Typescript?
+    - Type coercion is a problem with Javascript specifically with math
+    - JS always intakes strings that must be converted
+        - if they aren't converted then type coercion or improper execution takes place
+    - Data type errors are thrown which speeds up development flow
+        - Troubleshooting type errors in JS can be obscure
+
+Disadvantage of Typescript
+    - Does not run in the browser
+    - Must be compiled into JS
+    - npm install -g typescript
+        - installs typescript globally and downloads typescript compiler
