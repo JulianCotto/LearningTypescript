@@ -1,0 +1,18 @@
+tsc "file.ts"
+    - Generate JS from TS file without tsConfig.json check
+
+tsc
+    - Generate JS from TS across the whole project while checking and applying tsConfig.json
+
+tsc --init
+    - Generate tsConfig.json
+
+tsc --watch
+    - anytime a change is saved, compile TS into JS
+
+npm init -y
+    - Confirm all default choices and generate package.json file
+
+npm install @types/node | @types/react
+    - Install custom types
+    -- save -dev (dev package only)

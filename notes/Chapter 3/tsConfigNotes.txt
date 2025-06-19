@@ -1,0 +1,36 @@
+Most Options in txConfig are niche and advanced
+Projects that use most options will generally be set up beforehand
+
+Projects Section Settings
+    - Advanced Project Level Settings
+    - disabledReferenceProjectLoad
+        - Disable TypeScript from Loading all subprojects into a single project into memory
+
+Language & Environment Settings
+    - Target: string => The version of JS code that TSC will produce
+    - Lib   : []     => Allows the inclusion of special libraries
+
+Modules Settings
+    - Module : string => "NodeNext" or "Preserve" or etc - Controls imports and exports
+    - rootDir: string => Controls which folder contains the source files
+
+JS Support Section - Can allow JS to interact with TS
+    - allowJS: Boolean => true
+    - checkJS: Boolean => true
+
+EMIT Section
+    - sourceMap: Boolean => Render source maps when compiler runs
+    - outDir   : string  => output directory
+    - noEmit   : Boolean => Just check the code but produce no output
+    - noEmitOnError : Boolean => Stop TSC from rendering JS files when an error would occur
+
+Interop Constraints Settings
+
+Type Checking Constraints
+    - strict: boolean => enable all strict type-checking
+        - With the strict set to true, no variable inferencing takes place
+    - strictNullChecks : Dont accidentally work with null value
+
+Node libraries are not included in TypeScript so it doesn't know their types
+    - Requires the installation of extra type packages
+
