@@ -1,0 +1,43 @@
+Types are not specific to TypeScript
+    - Uses typeof JS operator to validate Type input
+
+TypeScript does have inferred type assignment through initialized variables
+    - let userAge: number = 38; <- overly verbose
+    - let userAge = 38; <- acceptable
+
+Where to take advantage of TypeScript
+    - Variables
+    - Functions
+        - function add(a: number, b: number) { return a + b } <- statically typed
+        - function add(a: number, b = 5) {return a + b } <- type inference
+
+Flexible Types
+    - Accepting both a number or a string
+    - let age: any = 36;
+        - Accepts any variable type and basically reverts TS code to JS code
+        - Use as a last resort
+        - Better alternative to any type
+            - Union type
+
+Arrays and Array Types
+    - Use type inference but can also be statically typed
+    - let users: string[];
+    - Union array
+        - let users1: (string | number)[];
+
+
+TypeScript Built-In Types
+    - any (accepts any kind of value, single or double quotes)
+    - string
+    - number
+    - boolean
+    - Union (Uses | symbol to work with multiple types)
+    - {}
+    - Record
+    - void
+    - never
+    - functions
+    - html input type
+    - undefined
+    - null
+    -
