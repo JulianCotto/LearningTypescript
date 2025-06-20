@@ -1,0 +1,50 @@
+Classes
+    - Blueprints for objects
+    - Available in vanilla JS and TS
+
+Properties
+    - Assigned directly in class
+
+Public vs Private
+    - Public properties can be accessed outside the class
+    - Private properties can only be accessed inside the class
+        - getter methods are required for provate variables
+
+Protected
+    - Like Private but involves object inheritance
+
+readonly
+    - ensures that a property can be read, but cannot be changed
+    - can be used with public and private
+    - Public is inferred
+
+getters and setters
+    - get is the keyword to declare a getter
+        - must have a return value
+    - setters called right before variable instantiation
+
+static properties
+    - can be accessed on the class itself before even accessing the class
+
+Inheritance
+    - add properties to already defined classes
+    - When using constructor in extends you must call super(); to load the base class
+
+Protected Modifier
+    - Inheriting class needs to access private properties
+
+Abstract Class
+    - Not a part of vanilla JS
+    - Great for creating a base class
+    - must use super(); when using constructor
+
+Interfaces
+    - Not available in vanilla JS, TS only
+    - Allows you to define the type of object
+    - Allows implementation as contract
+        - force a class to adopt the shape of the interface
+
+Interfaces vs Type Keyword
+    - Declaration Merging (not available with types)
+        - Interfaces allow you to add more properties by using the same interface name again
+    - Both are acceptable, and it generally comes down to personal preference/needs

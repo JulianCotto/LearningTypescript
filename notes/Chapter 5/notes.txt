@@ -1,0 +1,17 @@
+JS Variable Types & Scope
+    - const is immutable after declaration
+    - let is not immutable after declaration
+    - var is not immutable after declaration
+        - should not use this anymore
+
+    - var has a global and a function scope
+        - var-defined outside functions is available everywhere
+        - var-defined inside function is only available within the function
+            - functions have access to local and global variables
+
+    - let is block scoped
+        - it is available only in the block it is declared in
+
+    - default arguements
+        - must be defined last in the list due to the way parameters are passed to variables
+        - no parameter function inference for order of parameters in TS

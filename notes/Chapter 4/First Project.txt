@@ -1,0 +1,80 @@
+SETUP
+    1. create blank directory
+    2. run `tsc --init` to generate tsConfig.json
+    3. Open tsConfig.json and update JS version to 2022
+
+Psuedocode Outline
+    1. Function Declarations
+        1a. function calculateInvestment(data) {} => return []
+        1b. function printResults(results) {} => void return
+    2. Define input and return types
+        2a. type InvestmentData = {
+                initialAmount: number;
+                annualContribution: number;
+                expectedReturn: number;
+                duration: number;
+            };
+        2b. type InvestmentResult = {
+                year: string;
+                totalAmount: number;
+                totalContributions: number;
+                totalInterestEarned: number;
+            };
+        2c. type CalculationResult = InvestmentResult[] | string;
+    3. Fill out calculateResult() function with error checking and return
+        3a. destructure data => const { initialAmount, annualContribution, expectedReturn, duration } = data;
+        3b. error checking
+            - if (initialAmount < 0) {
+                      return 'Initial amount cannot be negative';
+                  }
+            - if (duration <= 0) {
+                      return 'Duration cannot be less than or equal to zero years';
+                  }
+            if (expectedReturn <= 0) {
+                    return 'Expected return must be at least zero';
+                }
+        3c. declare local variables and return variable
+            - let total = initialAmount; // the amount we start with
+            - let totalContributions = 0; // we haven't begun contributing yet, so = 0
+            - let totalInterestEarned = 0; // we haven't begun contributing yet, so = 0
+            - const annualResults: InvestmentResult[] = []; // investmentResult array type for return starting at 0 for year 0
+        3d. Declare loop to calculate and store results
+            - for (let i = 0; i < duration; i++) {
+                      total = total * (1 + expectedReturn);
+                      totalInterestEarned = total - totalContributions - initialAmount;
+                      totalContributions = totalContributions + annualContribution;
+                      total = total + annualContribution;
+                      annualResults.push({
+                          year: `Year ${i + 1}`, // string literal with variable injection
+                          totalAmount: total,
+                          totalInterestEarned, // the same name for key and variable allows us to omit colon assignment
+                          totalContributions
+                      });
+                  }
+        3e. return annualResults;
+    4. Fill out the print results function with early exit on error or results
+        4a. early exit on error-if (typeof results === 'string') {
+                                console.log(results);
+                                return;
+                            }
+        4b. printing loop - for (const yearResult of results) {
+                                    console.log(yearResult.year);
+                                    console.log(`Total                 : ${yearResult.totalAmount.toFixed(0)}`);
+                                    console.log(`Total Contributions   : ${yearResult.totalContributions.toFixed(0)}`);
+                                    console.log(`Total Interest Earned : ${yearResult.totalInterestEarned.toFixed(0)}`);
+                                    console.log("------------------------------");
+                                }
+    5. Execution
+        5a. Declare input type that is of custom type InvestmentData with initialized values
+            - const investmentData: InvestmentData = {
+                  initialAmount: 5000, // dollars
+                  annualContribution: 500, // dollars
+                  expectedReturn: 0.08, // percent
+                  duration: 10 // years
+              };
+        5b.  execute calculation and store results
+            - const results = calculateInvestment(investmentData)
+        5c. execute printResults() with results array as a parameter
+    6. Finalize
+        6a. run `tsc` to compile ts file to js code
+        6b. run `node calculator.js -y` to execute the entire program
