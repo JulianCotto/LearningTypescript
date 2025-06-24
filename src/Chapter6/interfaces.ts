@@ -42,17 +42,6 @@ interface Authenticatable {
 }
 
 // force the class to have a certain shape
-class AuthenticatableUser implements Authenticatable {
-    constructor(public userName: string, public email: string, public password: string) {}
-
-    login() {
-        console.log('User logged in');
-    }
-    logout() {
-        console.log('User logged out');
-    }
-}
-
 function authenticate(user: Authenticatable) {}
 
 // this is not declaration merging, this is the creation of a new interface that builds on the interface it extends

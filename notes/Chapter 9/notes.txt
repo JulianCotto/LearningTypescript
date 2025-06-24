@@ -1,0 +1,5 @@
+Linked List
+    - a data structure that connects linked values
+    - nodes contain values
+        - every node knows about the nodes that it is connected to
+    - edges connect nodes
