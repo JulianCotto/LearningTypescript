@@ -1,0 +1,38 @@
+Experimental Decorators
+    - Uncomment experimentalDecorators in tsConfig.ts
+    - Angular uses component decorators much the same way we make experimental decorators
+
+Adding multiple decorators
+    - more than one can be added anywhere that they are used
+    - decorators execute bottom up
+        - the one that is closest to the line of code its decorating runs first, then the next line above, etc.
+
+Decorator locations
+    - property decorators are executed when the class is recognized as a class
+    - accessor
+    - property
+    - method
+    - parameter
+
+Decorators execute when the class is defined, before the class is initialized
+    - decorators are capable of generating return values within their functions
+    - great for utility functions like autobind
+
+Validation with decorators
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

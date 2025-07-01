@@ -1,0 +1,7 @@
+Project Implementation Steps
+    1. terminal one - ```node install```, ```node start```
+     - terminal two - ```tsc -watch```
+    2. Make the HTML form visible
+        - Create class for input
+        - declare variables for html elements that hold input and output elements
+    3. Some CSS changes

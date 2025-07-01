@@ -1,0 +1,36 @@
+Decorators are a Meta Programming Features
+    - Code that interacts with other code. The other code makes up the application
+    - @decoratorName()
+        - Makes changes to what it applied to
+    - A feature that allows us to write code that allows us to change the behavior of other code
+    - Used in Angular Development to assign reusable HTML elements
+    - Requires you to code in a certain way so that we can alter the behavior of other code
+        - to which we attach decorators to
+
+    - Typescript supports two different kinds of decorators
+        - ECMAScript decorators
+            - also a javascript feature
+            - can be created without typescript
+        - Experimental decorators
+            - not a javascript feature
+            - older version of implementation that didnt make it to vanilla JS
+
+    - Decorators feature is an Object Oriented Feature
+        - Can only be used on Object related entities
+            - classes
+            - methods
+            - field
+            - getter
+            - setter
+
+    - A decorator is just a function
+
+    - Decorator Code Execution
+        - Decorator code is executed when it is attached to the class
+        - Class code is executed when called
+        - Methods are initialized before classes
+            - Method decorators come first
+        - Field code is executed after decorator code and so is undefined
+
+    - Decorator factory
+        - A function that produces a decorator
