@@ -1,0 +1,7 @@
+Two Ways of Organizing, Importing and Exporting Code
+    - Namespaces & File Bundling (The TS way)
+        - Use "namespace" syntax to group related code
+        - Per-file or bundled compilation is possible
+    - ES Modules (The JS way - newer implementation)
+        - use official ES Modules import / export syntax
+        - Bundling via build tools (e.g., Webpack) is still possible
