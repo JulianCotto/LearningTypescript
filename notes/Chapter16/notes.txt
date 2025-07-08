@@ -1,0 +1,61 @@
+- TypeScript & Webpack
+    - Using the Chapter 15 esModules version of the project
+        - List of HTTP Requests before work (this is a lot)
+            localhost	                            304	document	Other	                    261 B	3 ms
+            app.css	                                304	stylesheet	(index):7	                242 B	3 ms
+            app.js	                                304	script	    (index):8	                241 B	3 ms
+            browser-sync-client.js?v=2.29.3	        304	script	    (index):20	                190 B	9 ms
+            project-input.js	                    304	script	    app.ts:1	                242 B	8 ms
+            project-list.js	                        304	script	    app.ts:2	                242 B	9 ms
+            base-component.js	                    304	script	    project-input.ts:1	        242 B	6 ms
+            validation.js	                        304	script	    project-input.ts:2	        242 B	6 ms
+            autobind.js	                            304	script	    project-input.ts:3	        242 B	6 ms
+            project-state.js	                    304	script	    project-input.ts:4	        242 B	6 ms
+            project.js	                            304	script	    project-list.ts:6	        242 B	5 ms
+            project-item.js	                        304	script	    project-list.ts:10	        242 B	5 ms
+            socket.io/?EIO=4&transport=polling&t=	200	xhr	browser-sync-client.js?v=	        307 B	2 ms
+            socket.io/?EIO=4&transport=polling&t=	200	xhr	        browser-sync-client.js?	    280 B	2 ms
+            socket.io/?EIO=4&transport=polling&t=	200	xhr	        browser-sync-client.js?v=	2.3 kB	3 ms
+            socket.io/?EIO=4&transport=websocket&	101	websocket	browser-sync-client.js?v=	  0 B	Pending
+            socket.io/?EIO=4&transport=polling&t=	200	xhr	        browser-sync-client.js?v=	189 B	100 ms
+            socket.io/?EIO=4&transport=polling&t=	200	xhr	        browser-sync-client.js?v=	280 B	2 ms
+
+        - Every HTTP request takes a little bit of time
+            - A base duration that it will always take to complete
+        - The more HTTP requests that are made can cause a backup of requests
+            - Causing latency and slowdown
+
+        - Webpack can bundle all the files together and can optimize the code
+    - Webpack (bundling and orchestration tool)
+        - Will optimize the code
+        - Allows us to add more build tools/steps
+
+        - Normal Setup
+            - multiple .ts files & HTTP requests
+            - unoptimized code (not as small as possible)
+                - webpack can use shorter variable names, remove whitespace, etc.
+
+        - Webpack setup
+            - Code bundles = fewer imports
+            - Optimized (minified) code, less code to download
+            - More build steps can be added easily
+        - Setting up webpack with Project 14 esModules Implementation
+            - run `npm install --save-dev webpack webpack-cli webpack-dev-server typescript ts-loader` (only a development dependency)
+                - Adds packages to package.json
+                    - "ts-loader": "^9.5.2" (works with webpack, tells webpack how to convert TS to JS)
+                    - "typescript": "^5.8.3" (specify specific TS version to lock in version)
+                    - "webpack": "^5.99.9" (the heart of webpack - Converts, optimizes and bundles)
+                    - "webpack-cli": "^6.0.1" (allows for running webpack cli commands)
+                    - "webpack-dev-server": "^5.2.2" (built-in dev server)
+
+            - tsConfig.ts Setup
+                - target: es5, es6
+                - module: 2015
+                - comment out rootDir because webpack will handle this
+
+            - create webpack.config.js
+                - Needs to know the entry point (app.ts)
+                - remove '.js' from all imports in the current project
+                - uses node.js features
+
+            -

@@ -1,0 +1,74 @@
+The problem with the TypeScript compiler
+    - Client-Side projects have multiple different file types
+    project structure
+        - src
+            - app.ts
+            - index.html
+            - styles.css
+        - .gitignore
+        - package.json
+        - tsconfig.json
+
+    - `npm run build` would result in (success):
+        project structure
+            - dist
+                - app.js
+            - src
+                - app.ts
+                - index.html
+                - styles.css
+            - .gitignore
+            - package.json
+            - tsconfig.json
+
+        - the HTML and CSS files do not compile into the app.js file
+            - only TypeScript code compiles
+
+        - To solve for this, we could create a build.sh file
+            - it would copy all non-TypeScript files to the ./dist folder
+            - invoke it in our package.json
+            "scripts": {
+                "build": "tsc && build.sh"
+            }
+
+            project structure
+                - src
+                    - app.ts
+                    - index.html
+                    - styles.css
+                - build.sh <- copy all non TS files to ./dist folder
+                - .gitignore
+                - package.json
+                - tsconfig.json
+
+        - Alternatively, there are tools like Webpack and Vite
+            - Normally already set up for us
+            - webpack
+                - can handle many file types
+                - bundles and optimizes all files having to do with the website
+                - webpack is very in-depth and can have a whole course built around it
+                - normally handled at a higher level than the TS developer
+            - esbuild
+                - extremely fast builder and optimizer
+            - vite
+                - very popular tool for building all kinds of web dev projects
+                - already setup for TS optimization
+                - vite website shows how to build projects of different types
+                    - shows us how to make the project support TS files
+
+                - example using Vanilla JavaScript
+                    - run `npm create vite@latest`
+                        - `y` to proceed
+                        - name = project
+                        - Use arrow keys to select presets
+                        - `npm install`, 'npm run build' -> to create node_modules & dist folders
+                        - Also creates optimized CSS and HTML code for TS/JS project
+
+                - devDependencies in tsConfig.ts
+                    - Explicitly state TypeScript allows for compiling TS without downloading it locally
+                    - Allows for using older versions of TypeScript
+
+                - .d.ts files
+                    - TypeScript declaration files
+                    - Don't specify code that needs to be executed
+                    - Only TypeScript Type definitions that can be used by other code
