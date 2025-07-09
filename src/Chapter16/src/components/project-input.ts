@@ -1,7 +1,7 @@
-import Component from "./base-component.js"; // can change the name
-import * as Validation from '../util/validation.js'; // grouping allows for dot notation access to functions
-import { autobind as Autobind } from '../decorator/autobind.js'; // allows for aliases (for avoiding name clashes)
-import { projectState } from '../state/project-state.js';
+import Component from "./base-component"; // can change the name
+import * as Validation from '../util/validation'; // grouping allows for dot notation access to functions
+import { autobind as Autobind } from '../decorator/autobind'; // allows for aliases (for avoiding name clashes)
+import { projectState } from '../state/project-state';
 
 // ProjectInput Class
 export class ProjectInput extends Component<HTMLDivElement, HTMLFormElement> {

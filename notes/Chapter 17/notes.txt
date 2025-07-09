@@ -1,0 +1,18 @@
+- Using Third Party Libraries
+    - Example: LoDash library (JS written with no TS in mind)
+        - _.chunk method import
+        - npm install --save lodash
+        - then install types (npm install --save-dev)
+        - Added to package.json:
+            "devDependencies": {
+                "@types/lodash": "^4.17.20"
+              }
+        - To use external libraries it is essential to download the custom types that work with that library
+
+- There are 3rd party libraries that are written with TS in mind and also those that are designed specifically for ts
+    - libraries written in TS don't need to have corresponding ts types installed
+        - prisma
+
+- TypeScript first library like Zod
+    - Zod - Allows you to define a schema
+        - Define the shape of Data and do runtime validation where regular TS only allows compilation validation

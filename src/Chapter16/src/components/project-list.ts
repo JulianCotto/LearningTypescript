@@ -1,13 +1,13 @@
 // interface or type imports can be annotated; before or after curly braces
 // simply add extra annotation to let us know if what is being imported is a TypeScript only feature
 // or an actual object that can be converted into Javascript code
-import { type DragTarget } from "../models/drag-drop.js";
+import { type DragTarget } from "../models/drag-drop";
 // import type { DragTarget, ...other imported functions } from "../models/drag-drop.js";
-import { Project, ProjectStatus } from "../models/project.js";
-import Cmp from "./base-component.js"; // can rename default imported elements
-import { autobind } from "../decorator/autobind.js";
-import { projectState } from "../state/project-state.js";
-import { ProjectItem } from "./project-item.js";
+import { Project, ProjectStatus } from "../models/project";
+import Cmp from "./base-component"; // can rename default imported elements
+import { autobind } from "../decorator/autobind";
+import { projectState } from "../state/project-state";
+import { ProjectItem } from "./project-item";
 
 // ProjectList Class
 export class ProjectList extends Cmp<HTMLDivElement, HTMLElement>
