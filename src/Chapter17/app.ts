@@ -6,9 +6,16 @@ import { z } from 'zod';
 const dataSchema = z.object({
     title: z.string(),
     id: z.number(),
-    values: z.array(z.string()),
+    values: z.array(z.union([z.string(), z.number()])),
 });
 
-const content = fs.readFileSync('data.json');
+type Data = z.infer<typeof dataSchema>;
 
-dataSchema.parse(content);
+function output(data: Data) {
+    console.log(data);
+}
+
+const content = JSON.parse(fs.readFileSync('data.json').toString());
+
+const parsedData = dataSchema.parse(content);
+output(parsedData);
